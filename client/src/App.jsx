@@ -11,14 +11,15 @@ import EventRegisterModal from './components/EventRegisterModal';
 import JoinClubModal from './components/JoinClubModal';
 import { api } from './services/api';
 import { Snowflake, Terminal, CheckCircle2 } from 'lucide-react';
+import { DEFAULT_STATS, DEFAULT_TEAM_HEADS, DEFAULT_EVENTS, DEFAULT_INSTAGRAM } from './defaultData';
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [stats, setStats] = useState(null);
-  const [events, setEvents] = useState([]);
-  const [teamMembers, setTeamMembers] = useState([]);
-  const [instagramData, setInstagramData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState(DEFAULT_STATS);
+  const [events, setEvents] = useState(DEFAULT_EVENTS);
+  const [teamMembers, setTeamMembers] = useState(DEFAULT_TEAM_HEADS);
+  const [instagramData, setInstagramData] = useState(DEFAULT_INSTAGRAM);
+  const [loading, setLoading] = useState(false);
 
   // Modals
   const [authModalOpen, setAuthModalOpen] = useState(false);
