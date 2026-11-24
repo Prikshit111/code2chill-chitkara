@@ -1,141 +1,123 @@
 import React from 'react';
-import { Snowflake, Instagram, Linkedin, Github, Mail, MapPin, Heart } from 'lucide-react';
+import { Snowflake, Instagram, Linkedin, Github, Mail, MapPin, ArrowUpRight } from 'lucide-react';
+
+const NAV_LINKS = [
+  { label: 'About', href: '#about' },
+  { label: 'Stats', href: '#stats' },
+  { label: 'Events', href: '#events' },
+  { label: 'Team', href: '#team' },
+  { label: 'Instagram', href: '#instagram' },
+];
+
+const GUILDS = ['MERN & Full Stack', 'AI & Machine Learning', 'Competitive Programming', 'UI/UX & Product Design', 'Cloud & DevOps'];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050811] border-t border-slate-800/80 pt-16 pb-12 relative overflow-hidden">
+    <footer className="relative bg-[#030508] border-t border-slate-800/60 pt-20 pb-10 overflow-hidden">
+      {/* Background mesh */}
+      <div className="absolute inset-0 pointer-events-none opacity-30"
+        style={{backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
+
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/60">
-          
-          {/* Brand & Campus Info */}
-          <div className="lg:col-span-2 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-14 border-b border-slate-800/50">
+
+          {/* Brand */}
+          <div className="lg:col-span-1 space-y-5">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-cyan-400 p-[2px]">
-                <div className="w-full h-full bg-[#0B0F1E] rounded-[10px] flex items-center justify-center">
-                  <Snowflake className="w-5 h-5 text-cyan-400" />
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-cyan-400 p-[2px]">
+                <div className="w-full h-full bg-[#030508] rounded-[10px] flex items-center justify-center">
+                  <Snowflake className="w-5 h-5 text-cyan-400" style={{ animation: 'spin 12s linear infinite' }} />
                 </div>
               </div>
               <div>
-                <span className="text-xl font-extrabold text-white">
-                  Code<span className="text-red-500">2</span>Chill
-                </span>
-                <span className="ml-2 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-red-500/10 text-red-400 border border-red-500/30 rounded">
-                  Chitkara Univ
-                </span>
+                <div className="text-xl font-extrabold text-white">Code<span className="text-red-500">2</span>Chill</div>
+                <div className="text-[10px] text-slate-500 font-medium">Chitkara University • Rajpura</div>
               </div>
             </div>
 
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Code2Chill is the premier student tech & coding club of Chitkara University, Rajpura, Punjab. Empowering student developers through hackathons, real-world fullstack projects, and peer mentorship.
+            <p className="text-sm text-slate-500 leading-relaxed">
+              Premier student tech & coding club of Chitkara University. Building tomorrow's engineers through hackathons, projects, and community.
             </p>
 
-            <div className="flex items-start gap-2.5 text-xs text-slate-400">
+            <div className="flex items-start gap-2 text-xs text-slate-600">
               <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-              <span>
-                Chitkara University, Punjab Campus, Chandigarh-Patiala National Highway (NH-64), Rajpura, Punjab 140401
-              </span>
+              <span>NH-64 Chandigarh–Patiala Highway, Rajpura, Punjab 140401</span>
             </div>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="https://www.instagram.com/code2chill.osl?jplx=MWcxZzV0d3lhdmJnag=="
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-pink-400 hover:border-pink-500/30 transition-colors"
-                title="Instagram @code2chill.osl"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="https://linkedin.com/company/code2chill-chitkara"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-blue-400 hover:border-blue-500/30 transition-colors"
-                title="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="https://github.com/code2chill-chitkara"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600 transition-colors"
-                title="GitHub"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
-                href="mailto:code2chill@chitkara.edu.in"
-                className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-red-400 hover:border-red-500/30 transition-colors"
-                title="Email"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
+            {/* Social icons */}
+            <div className="flex items-center gap-2.5 pt-1">
+              {[
+                { href: 'https://www.instagram.com/code2chill.osl?jplx=MWcxZzV0d3lhdmJnag==', icon: Instagram, label: '@code2chill.osl', color: 'hover:text-pink-400 hover:border-pink-500/30' },
+                { href: 'https://linkedin.com/company/code2chill-chitkara', icon: Linkedin, label: 'LinkedIn', color: 'hover:text-blue-400 hover:border-blue-500/30' },
+                { href: 'https://github.com/Prikshit111/code2chill-chitkara', icon: Github, label: 'GitHub', color: 'hover:text-white hover:border-slate-600' },
+                { href: 'mailto:code2chill@chitkara.edu.in', icon: Mail, label: 'Email', color: 'hover:text-red-400 hover:border-red-500/30' },
+              ].map(({ href, icon: Icon, label, color }) => (
+                <a key={href} href={href} target="_blank" rel="noreferrer" title={label}
+                  className={`p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-500 transition-all ${color}`}>
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">
-              Explore
-            </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#events" className="hover:text-white transition-colors">Upcoming Events</a></li>
-              <li><a href="#stats" className="hover:text-white transition-colors">Member Stats</a></li>
-              <li><a href="#team" className="hover:text-white transition-colors">Team Heads</a></li>
-              <li><a href="#instagram" className="hover:text-white transition-colors">Instagram Feed</a></li>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-300 mb-6">Navigate</h4>
+            <ul className="space-y-3">
+              {NAV_LINKS.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm text-slate-500 hover:text-white transition-colors flex items-center gap-2 group">
+                    <span className="w-1 h-1 rounded-full bg-slate-700 group-hover:bg-red-500 transition-colors" />
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Domains */}
+          {/* Guilds */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">
-              Club Guilds
-            </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li>MERN & Fullstack</li>
-              <li>AI & Machine Learning</li>
-              <li>Competitive Programming</li>
-              <li>UI/UX & Product Design</li>
-              <li>Cloud & DevOps</li>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-300 mb-6">Club Guilds</h4>
+            <ul className="space-y-3">
+              {GUILDS.map(g => (
+                <li key={g} className="text-sm text-slate-500 flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-cyan-800 shrink-0" />
+                  {g}
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact & Affiliation */}
+          {/* Contact */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">
-              Campus Contact
-            </h4>
-            <p className="text-xs text-slate-400 mb-2">
-              Chitkara Innovation Incubator & Turing Block, Rajpura Campus
-            </p>
-            <p className="text-xs font-mono text-cyan-400 mb-2">
-              code2chill@chitkara.edu.in
-            </p>
-            <a
-              href="https://www.instagram.com/code2chill.osl?jplx=MWcxZzV0d3lhdmJnag=="
-              target="_blank"
-              rel="noreferrer"
-              className="text-[11px] text-pink-400 font-mono hover:underline block"
-            >
-              IG: @code2chill.osl
-            </a>
-          </div>
-
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <div>
-            © {new Date().getFullYear()} Code2Chill Club, Chitkara University Rajpura. All rights reserved.
-          </div>
-          <div className="flex items-center gap-1 text-slate-400">
-            <span>Built with passion & MERN stack for Chitkarians</span>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-300 mb-6">Contact</h4>
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs text-slate-600 mb-1">Campus</p>
+                <p className="text-sm text-slate-400">Chitkara Innovation Incubator, Rajpura Campus</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-600 mb-1">Email</p>
+                <a href="mailto:code2chill@chitkara.edu.in" className="text-sm font-mono text-cyan-400 hover:text-cyan-300 transition-colors">
+                  code2chill@chitkara.edu.in
+                </a>
+              </div>
+              <div>
+                <p className="text-xs text-slate-600 mb-1">Instagram</p>
+                <a href="https://www.instagram.com/code2chill.osl?jplx=MWcxZzV0d3lhdmJnag==" target="_blank" rel="noreferrer"
+                  className="text-sm text-pink-400 hover:text-pink-300 transition-colors font-mono flex items-center gap-1">
+                  @code2chill.osl <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
+        {/* Bottom bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
+          <span>© {new Date().getFullYear()} Code2Chill Club, Chitkara University Rajpura. All rights reserved.</span>
+          <span>Built with ❤️ using MERN Stack + React + TailwindCSS</span>
+        </div>
       </div>
     </footer>
   );

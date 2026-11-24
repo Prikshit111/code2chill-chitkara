@@ -91,6 +91,18 @@ export const DEFAULT_TEAM_HEADS = [
     linkedin: 'https://www.linkedin.com/in/tamanna-kakkar-995b73385?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
     instagram: 'https://www.instagram.com/code2chill.osl?jplx=MWcxZzV0d3lhdmJnag==',
     order: 7
+  },
+  {
+    id: 'team-8',
+    name: 'Prikshit Goel',
+    role: 'Technical Team Member',
+    domain: 'Technical',
+    campus: 'Chitkara University, Rajpura',
+    initials: 'PG',
+    bio: 'A dedicated technical contributor at Code2Chill, passionate about building full-stack solutions and driving innovation in the developer community at Chitkara University.',
+    linkedin: 'https://www.linkedin.com/in/prikshit-goel',
+    instagram: 'https://www.instagram.com/code2chill.osl?jplx=MWcxZzV0d3lhdmJnag==',
+    order: 8
   }
 ];
 
