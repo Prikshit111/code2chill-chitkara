@@ -1,0 +1,21 @@
+{
+  "name": "code2chill-chitkara",
+  "version": "1.0.0",
+  "description": "Official Web Platform for Code2Chill Club - Chitkara University, Rajpura, Punjab (MERN Stack)",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "node server/server.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client"
+  },
+  "keywords": [
+    "code2chill",
+    "chitkara-university",
+    "rajpura",
+    "punjab",
+    "mern-stack",
+    "club-website"
+  ],
+  "author": "Code2Chill Club - Chitkara University",
+  "license": "ISC"
+}
